@@ -1,24 +1,34 @@
 # Configure main menu and social menu
-#[[main]]
-#identifier = "home"
-#name = "Home"
-#url = "/"
-#[main.params]
-#icon = "home"
-#newtab = true
+
+# [[main]]
+#     identifier = "home"
+#     name = "Home"
+#     url = "https://github.com/AminiamEva"
+
+#     [main.params]
+#         icon = "home"
+#         newtab = true
 
 [[social]]
     identifier = "github"
     name       = "GitHub"
-    url        = "https://github.com/CaiJimmy/hugo-theme-stack"
+    url        = "https://github.com/AminiamEva"
 
     [social.params]
         icon = "brand-github"
 
+# [[social]]
+#     identifier = "twitter"
+#     name       = "Twitter"
+#     url        = "https://twitter.com"
+
+#     [social.params]
+#         icon = "brand-twitter"
+
 [[social]]
-    identifier = "twitter"
-    name       = "Twitter"
-    url        = "https://twitter.com"
+    identifier = "zhihu"
+    name       = "知乎"
+    url        = "https://www.zhihu.com/people/Aminiam"
 
     [social.params]
-        icon = "brand-twitter"
+        icon = "brand-zhihu"

@@ -10,8 +10,8 @@ favicon        = "img/favicon.png"
 SortBy              = "default"
 
 [footer]
-    since      = 2020
-    customText = ""
+    since      = 2026
+    customText = "冷暖世情，比比如畫。"
 
 [dateFormat]
     published   = ":date_full"
@@ -19,12 +19,12 @@ SortBy              = "default"
 
 [sidebar]
     emoji    = "🎭"
-    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    subtitle = "冷暖世情，比比如畫。"
     avatar   = "img/avatar.jpg"
 
 [article]
     headingAnchor = false
-    math          = false
+    math          = true
     readingTime   = true
 
     [article.license]
