@@ -16,7 +16,6 @@ Add in `{PROJECT_SOURCE_DIR}/.vscode/tasks.json`:
 
 ```json
 {
-    "version": "2.0.0",
     "tasks": [
         {
             "label": "Commit & Push",
