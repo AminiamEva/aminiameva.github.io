@@ -1,7 +1,7 @@
 ---
-title: VS Code Task: Commit and Push
-description: VS Code Task: Commit and Push
-slug: update-fork
+title: "VS Code Task: Commit and Push"
+description: "VS Code Task: Commit and Push"
+slug: vscode-task-commit-and-push
 date: 2026-08-18 20:31:10+0800
 categories:
     - Document
