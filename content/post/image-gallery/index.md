@@ -1,22 +1,20 @@
 ---
-title: Image gallery
-description: Create beautiful interactive image gallery using Markdown
-date: 2023-08-26 00:00:00+0000
-image: 2.jpg
+title: Image Gallery
+description: It says that I should exhibit my images here.
+date: 2026-08-18 19:23:13+0800
+image: cover.jpg
+categories:
+    - Main
+tags:
+    - Main
+    - Image
+weight: 2       # You can add weight to some posts to override the default sorting (date descending)
 ---
 
-Hugo theme Stack supports the creation of interactive image galleries using Markdown. It's powered by [PhotoSwipe](https://photoswipe.com/) and its syntax was inspired by [Typlog](https://typlog.com/).
+**External Images are not allowed**. Okay I will not import external images.
 
-To use this feature, the image must be in the same directory as the Markdown file, as it uses Hugo's page bundle feature to read the dimensions of the image. **External images are not supported.**
+> Aminiam keeps this just as a reminder.
 
-## Syntax
+Let me paste my avatar here cuz idk what to put in the gallary.
 
-```markdown
-![Image 1](1.jpg) ![Image 2](2.jpg)
-```
-
-## Result
-
-![Image 1](1.jpg) ![Image 2](2.jpg)
-
-> Photo by [mymind](https://unsplash.com/@mymind) and [Luke Chesser](https://unsplash.com/@lukechesser) on [Unsplash](https://unsplash.com/)
+![Image 1](e2.jpg)

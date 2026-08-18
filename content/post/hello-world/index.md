@@ -1,20 +1,19 @@
 ---
 title: Hello World
-description: Welcome to Hugo Theme Stack
+description: Aminiam's Blog Page
 slug: hello-world
-date: 2022-03-06 00:00:00+0000
-image: cover.jpg
+date: 2026-08-18 19:14:46+0800
+image: Columbina.png
 categories:
-    - Example Category
+    - Main
 tags:
-    - Example Tag
+    - Main
+    - Intro
 weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
 
-Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!
+## Aminiam's Blog Page
 
-For more information about this theme, check the documentation: https://stack.jimmycai.com/
+倉庫 fork 自 stack。Aminiam 創建此頁只是爲了消磨時間。
 
-Want a site like this? Check out [hugo-theme-stack-stater](https://github.com/CaiJimmy/hugo-theme-stack-starter)
-
-> Photo by [Pawel Czerwinski](https://unsplash.com/@pawel_czerwinski) on [Unsplash](https://unsplash.com/)
+畢竟，我連 `cover.jpg` 都沒有改……
