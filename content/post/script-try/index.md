@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Test `new-post.sh`"
 description: ""
 slug: script-try
 date: 2026-08-18 20:49:42+0800
