@@ -2,4 +2,4 @@
 
 This repo is forked from [Hugo theme Stack](https://github.com/CaiJimmy/hugo-theme-stack).
 
-And it records everything that [Aminiam](aminiameva.github.io) wants to record.
+And it records everything that [Aminiam](https://aminiameva.github.io) wants to record.
