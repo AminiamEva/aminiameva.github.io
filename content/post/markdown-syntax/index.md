@@ -5,6 +5,7 @@ description: Sample article showcasing basic Markdown syntax and formatting for 
 categories:
     - Document
 tags: 
+    - Document
     - Markdown
     - CSS
     - HTML
