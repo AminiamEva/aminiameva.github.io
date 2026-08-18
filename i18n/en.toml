@@ -1,0 +1,3 @@
+[footer]
+    builtWith  = "Built with {{ .Generator }}"
+    designedBy = ""
