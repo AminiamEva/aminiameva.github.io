@@ -23,6 +23,12 @@
                 "isDefault": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Commit & Push",
+            "type": "shell",
+            "command": "git add . && git commit -m \"$(date '+%Y-%m-%d %H:%M:%S')\" && git push",
+            "problemMatcher": []
         }
     ]
 }
