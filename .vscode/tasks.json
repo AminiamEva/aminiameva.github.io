@@ -36,5 +36,17 @@
             "command": "${workspaceFolder}/scripts/new-post.sh",
             "problemMatcher": []
         },
+        {
+            "label": "Update Date",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/update-date.sh",
+            "args": [
+                "${file}"
+            ],
+            "problemMatcher": [],
+            "runOptions": {
+                "reevaluateOnRerun": true
+            }
+        },
     ]
 }
