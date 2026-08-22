@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "設喻"
 description: ""
 slug: 設喻
 date: 2026-08-22 15:26:51+0800

@@ -31,7 +31,7 @@ DATE=$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S%z')
 
 cat > "$INDEX_FILE" <<EOF
 ---
-title: ""
+title: "$A"
 description: ""
 slug: $A
 date: $DATE
