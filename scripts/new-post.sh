@@ -26,6 +26,7 @@ done
 
 mkdir -p "$POST_DIR"
 
+
 DATE=$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S%z')
 
 cat > "$INDEX_FILE" <<EOF
