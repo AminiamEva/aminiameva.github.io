@@ -10,4 +10,4 @@ And it records everything that [Aminiam](https://aminiameva.github.io) wants to 
 
 Some content under `content/` is separately licensed.
 
-Details are included in LICENSE.
+Details are included in `LICENSE`.
