@@ -1,5 +1,11 @@
-The MIT License applies to the website's source code, including modifications
-and derivative works based on the original template.
+The MIT License applies to the website's source code and other software
+components, including the original template source code and any modifications,
+additions, scripts, configuration files, and derivative works made by the
+copyright holder.
+
+This includes, but is not limited to, source code under directories such as
+`layouts/`, `assets/`, `scripts/`, and other files constituting the website's
+software.
 
 Content under the `content/` directory is not covered by the MIT License.
 Original content created by the copyright holder, including original articles,
