@@ -5,7 +5,7 @@ slug: tree板子
 date: 2026-08-22 16:18:53+0800
 image:
 categories:
-    - Document
+    - 筆記
 tags:
     - cpp
     - ACM
