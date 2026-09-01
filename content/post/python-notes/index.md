@@ -71,7 +71,7 @@ tags:
 
 11. `<list>.remove()`根據值刪除元素
 
-12. `<list>.sort()`永久排序，`<list>.sort(True)`逆序，`<list>.sorted()`返回臨時排序
+12. `<list>.sort()`永久排序，`<list>.sort(reverse=True)`逆序，`<list>.sorted()`返回臨時排序
 
 13. `<list>.reverse()`永久翻轉
 
@@ -289,6 +289,22 @@ tags:
 53. 存儲數據（使用`json`）（JavaScript Object Notation）
 
     使用`json.dump(), json.load()`：
+    
+    ```python
+    import json
+    numbers = [1, 0, 0, 8, 6]
+    with open('data.json', 'w') as f:
+        json.dump(numbers, f)
+    ```
+    
+    ```python
+    import json
+    with open('data.json') as f:
+        numbers = json.load(f)
+    print(numbers)
+    ```
+    
+    
 
 ##  標準庫
 
