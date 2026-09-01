@@ -263,3 +263,53 @@ print:
 >>> rd.random()
 0.043562757723543566
 ```
+
+## View or shallow copy
+
+`View()` method creates a new array object that **looks at** the same data.
+
+```python
+>>> c = a.view()
+>>> c is a
+False
+>>> c.base is a
+True
+>>> c.flags.owndata
+False
+```
+
+Slicing an array returns a view of it.
+
+```python
+>>> s = a[:, 1:3]
+s[:] = 10 # s[:]is a view of `s`. Note the difference between `s=10` and `s[:]=10`
+```
+
+##  Deep copy
+
+The `copy()` method makes a complete copy f the array and its data.
+
+```python
+>>> d = a.copy()
+>>> d is a
+False
+```
+
+Sometimes `copy()` should be called after slicing if the original array is not required anymore. For example, suppose `a` is a huge intermediate result and the final result `b` only contains a small fraction of `a`, a deep copy should be made when constructing `b` with slicing.
+
+## Less basic
+
+### Broadcasting rules
+
+Broadcasting allows universal functions to deal in a meaningful way with inputs  that do not have exactly the same shape.
+
+The first rule of broadcasting is that if all input arrays do not have the same number of dimensions, a "1" will be repeatedly prepended to the shapes of the smaller arrays until all the arrays have the same number of dimensions.
+
+The second rule of broadcasting ensures that arrays with a size of 1 along a particular dimension act as if the had the size of the array with the largest shape along that dimension. The value of the array element is assumed to be the same along that dimension for the "broadcast" array.
+
+After application of the broadcasting rules, the sizes of all arrays must match.
+
+## Advanced indexing and index tricks
+
+### Indexing with arrays of indices
+
