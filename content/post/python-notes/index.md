@@ -512,7 +512,7 @@ for x in [1, 2, 2, 3]:
     cnt[x] += 1
 ```
 
-#### `itertools`
+### `itertools`
 
 迭代器工具
 
@@ -549,15 +549,15 @@ itertools.repeat(...)
 itertools.count(...)
 ```
 
-#### `heapq`
+### `heapq`
 
 堆（默认小根堆）
 
-#### `bisect`
+### `bisect`
 
 在有序序列中二分
 
-#### `functools`
+### `functools`
 
 函数工具，最常见是缓存：
 
@@ -573,7 +573,7 @@ def f(n):
 
 `@cache`会自动缓存函数结果
 
-#### operator
+### operator
 
 操作函数：
 
@@ -584,7 +584,7 @@ add(2, 3)
 
 常用于排序：
 
-```phon
+```python
 from operator import itemgetter
 a = [
 	("A", 20),
@@ -594,7 +594,7 @@ a = [
 a.sort(key=temgetter(1))
 ```
 
-#### `string`
+### `string`
 
 字符串常量
 
@@ -605,11 +605,11 @@ string.ascii_uppercase # ABCDEFGHIJKLMNOPQRSTUVWXYZ
 string.digits # 0123456789
 ```
 
-#### `re`
+### `re`
 
 正则表达式
 
-#### `os`
+### `os`
 
 操作系统
 
@@ -640,7 +640,7 @@ os.environ["PATH"]
 
 尽管现代 Python 更推荐用`pathlib`处理路径
 
-#### `pathlib`
+### `pathlib`
 
 文件路径
 
@@ -676,7 +676,7 @@ for p in Path(".").glob("*.py"):
 Path(".").rglob("*.py")
 ```
 
-#### `sys`
+### `sys`
 
 Python 运行环境
 
@@ -711,6 +711,6 @@ import subprocess
 subprocess.run(["git", "status"])
 ```
 
-#### `copy`
+### `copy`
 
 浅复制：`copy.copy()`，深复制：`copy.deepcopy()`
