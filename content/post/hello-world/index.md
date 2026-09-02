@@ -17,3 +17,5 @@ weight: 1       # You can add weight to some posts to override the default sorti
 倉庫 fork 自 stack。
 
 這裏記錄了 Aminiam 的筆記、心得和可以公開的寫作。
+
+所有原創的 Post 內容 Aminiam 保留所有權利，具體開源證書請查看 [LICENSE](https://github.com/AminiamEva/aminiameva.github.io/blob/master/LICENSE)。
