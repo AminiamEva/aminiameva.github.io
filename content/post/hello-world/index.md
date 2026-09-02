@@ -14,6 +14,6 @@ weight: 1       # You can add weight to some posts to override the default sorti
 
 ## Aminiam's Blog Page
 
-倉庫 fork 自 stack。Aminiam 創建此頁只是爲了消磨時間。
+倉庫 fork 自 stack。
 
-畢竟，我連 `cover.jpg` 都沒有改…
+這裏記錄了 Aminiam 的筆記、心得和可以公開的寫作。
