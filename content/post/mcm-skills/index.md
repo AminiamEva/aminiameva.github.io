@@ -208,3 +208,147 @@ def topsis(data, weights, indicator_types):
 >>> print(C)
 [0.76270391 0.23729606]
 ```
+
+## 最小二乘擬合與迴歸
+
+### 性質
+
+設擬合模型爲$\hat{y}=P_k(x)=\sum_i\beta_ix^k$，定義殘差平方和：
+
+$$
+S(\beta) = \sum_i(y_i-\hat{y}_i)^2
+$$
+
+最小二乘法的目標是找到使$S(\beta)$最小的參數$\beta$。
+
+推導正規方程：將模型寫作$y=X\beta+\varepsilon$，其中$X$是範德蒙德矩陣（每行爲：$[1,x_i,x_i^2,\cdots,x_i^k]$），展開$S(\beta)$：
+
+$$
+S(\beta)=(y-X\beta)^T(y-X\beta)=y^Ty-2\beta^TX^Ty+\beta^TX^TX\beta
+$$
+
+對$\beta$求梯度並令其爲零：
+
+$$
+\frac{\partial S}{\partial\beta}=-2X^Ty+2X^TX\beta=0
+$$
+
+解得正規方程：
+
+$$
+X^TX\beta=X^Ty
+$$
+
+當$X$列滿秩時，$\beta=(X^TX)^{-1}X^Ty$
+
+證明其最優性（高斯-馬爾可夫定理，BLUE）：略
+
+### Python實現
+
+```python
+import numpy as np
+
+class LinearRegression:
+    def __init__(self):
+        self.coef_ = None
+        self.intercept_ = None
+        self.r2_ = None
+
+    def fit(self, X, y):
+        # X: （樣本數，特徵數），y: （樣本數，）
+        # 構造增廣矩陣：在X左邊加一列1，用來計算解決
+        X_design = np.c_[np.ones(X.shape[0]), X]
+        
+        beta = np.linalg.inv(X_design.T @ X_design) @ X_design.T @ y
+        self.intercept_ = beta[0]
+        self.coef_ = beta[1:]
+        
+        y_pred = self.predict(X)
+        ss_res = np.sum((y - y_pred)**2)
+        ss_tot = np.sum((y - np.mean(y))**2)
+        self.r2_ = 1 - ss_res / ss_tot
+        
+        return self
+    
+    def predict(self, X):
+        return X @ self.coef_ + self.intercept_
+```
+
+```python
+import numpy as np
+
+# 一维数组（形状: (3,) ）
+a1 = np.array([1, 2, 3])
+b1 = np.array([4, 5, 6])
+
+# 二维数组（形状: (2, 2) ）
+a2 = np.array([[1, 2], 
+               [3, 4]])
+b2 = np.array([[5, 6], 
+               [7, 8]])
+# 第一部分：按列左右拼接 (Horizontal / 增加列数)
+# np.hstack —— 对一维数组：保持一维，直接延长（拼接元素）
+res_hstack_1d = np.hstack((a1, b1))
+# 输出: [1 2 3 4 5 6] (6,)
+
+# np.c_ —— 对一维数组：转成列向量，形成二维矩阵（增加列数）
+# 相当于把 a1 和 b1 看作两列特征，形状从 (3,) + (3,) -> (3, 2)
+res_c_1d = np.c_[a1, b1]
+# 输出: [[1 4] (3, 2)
+#        [2 5]
+#        [3 6]]
+
+# np.column_stack —— 和 np.c_ 效果完全一样（一维数组当列处理）
+res_col_stack = np.column_stack((a1, b1))
+print(f"column_stack 一维结果: \n{res_col_stack}, 形状: {res_col_stack.shape}")
+
+# 针对二维数组：hstack、c_、concatenate(axis=1) 三者等价
+res_hstack_2d = np.hstack((a2, b2))
+res_c_2d = np.c_[a2, b2]
+res_concat_axis1 = np.concatenate((a2, b2), axis=1)  # axis=1 代表列方向
+{res_hstack_2d.shape}")
+# 输出: [[1 2 5 6] (2, 4)
+#        [3 4 7 8]]
+
+# 不要对一维数组用 concatenate(axis=1)，因为一维没有 axis=1 维度
+
+# np.vstack —— 对一维数组：转成行向量，上下堆叠（增加行数）
+# 相当于把 a1 和 b1 看作两行样本，形状从 (3,) + (3,) -> (2, 3)
+res_vstack_1d = np.vstack((a1, b1))
+# 输出: [[1 2 3] (2, 3)
+#        [4 5 6]]
+
+#  np.r_ —— 对一维数组：直接合并延长（和 vstack 不同！r_ 对一维是延长）
+# r_ 对一维数组的行为是“合并元素”，类似 hstack（特殊）
+res_r_1d = np.r_[a1, b1]
+# 输出: [1 2 3 4 5 6] (6,)
+
+# 针对二维数组：vstack、r_、concatenate(axis=0) 三者等价
+res_vstack_2d = np.vstack((a2, b2))
+res_r_2d = np.r_[a2, b2]
+res_concat_axis0 = np.concatenate((a2, b2), axis=0)  # axis=0行方向（默认值）
+# 输出: [[1 2] (4, 2)
+#        [3 4]
+#        [5 6]
+#        [7 8]]
+
+# np.row_stack —— np.vstack 的别名
+res_row_stack = np.row_stack((a2, b2))
+
+# 增加新维度拼接 (np.stack)
+# np.stack 会在指定位置创建一个新的维
+res_stack_axis0 = np.stack((a1, b1), axis=0)  # 新维度在第0层（第0轴变成2）
+res_stack_axis1 = np.stack((a1, b1), axis=1)  # 新维度在第1层（第1轴变成2）
+# 输出: [[1 2 3] (2, 3)
+#        [4 5 6]]
+# 输出: [[1 4] (3, 2)
+#        [2 5]
+#        [3 6]]
+```
+
+```python
+X.T # 转置
+np.linalg.inv() # 求逆
+x.reshape(-1, 1) # 将一维数组变成二维列向量。`-1`表示自动计算行数
+```
+
