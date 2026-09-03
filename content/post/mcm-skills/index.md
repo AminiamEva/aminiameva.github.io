@@ -159,3 +159,52 @@ TOPSIS (Tecnique for Order Preference by Similarity to Ideal Solution)
     $$
 
 顯然$C_i$越接近$1$，該方案越優。
+
+### Python實現
+
+```python
+import numpy as np
+
+def topsis(data, weights, indicator_types):
+    X = data.astype(float) # 將數據強制轉化成float
+    m, n = X.shape
+    # 1. 正向化（如果是極小性，則翻轉）
+    for j in range(n):
+        if indicator_types[j] == 'min':
+            X[:, j] = np.max(X[:, j]) - (X[:, j])
+    # 2. 向量歸一化（按列歸一化）
+    norm-factor = np.sqrt(np.sum(X**2, axis=0)) # axis=0是列，1是行
+    Z = X / norm_factor # 廣播
+    # 3. 加權
+    V = Z * weights # 區別@，這裏是對應元素相乘
+    # 4. 正負理想解
+    Z_pos = V.max(axis=0)
+    Z_neg = V.min(axis=0)
+    # 5. 計算歐氏距離
+    D_pos = np.sqrt(np.sum((V - Z_pos)**2, axis=1))
+    D_neg = np.sqrt(np.sum((V - Z_neg)**2, axis=1))
+    # 6. 貼近度
+    C = D_neg / (D_pos + D_neg + 1e-8)
+    # return
+    return C
+```
+
+```python
+>>> import numpy as np
+>>> data = np.array([[5, 5, 10], [8, 8, 5]])
+>>> weights = [0.25828499, 0.10472943, 0.63698557]
+>>> X = data.astype(float)
+>>> m, n = X.shape
+>>> norm_factor = np.sqrt(np.sum(X**2,axis=0))
+>>> Z = X / norm_factor
+>>> V = Z * weights
+>>> Z_pos = V.max(axis=0)
+>>> Z_neg = V.min(axis=0)
+>>> D_pos = np.sqrt(np.sum((V - Z_pos)**2, axis=1)\
+)
+>>> D_neg = np.sqrt(np.sum((V - Z_neg)**2, axis=1)\
+)
+>>> C = D_neg / (D_pos + D_neg + 1e-8)
+>>> print(C)
+[0.76270391 0.23729606]
+```
