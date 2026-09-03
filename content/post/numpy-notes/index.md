@@ -10,7 +10,9 @@ tags:
     - Python
 ---
 
-## The basics
+## Very Basics
+
+### The basics
 
 NumPy's array class is called `ndarray`.
 
@@ -52,7 +54,7 @@ array([6, 7, 8])
 <class 'numpy.ndarray'>
 ```
 
-## Array creation
+### Array creation
 
 - using `array()`:
 
@@ -109,11 +111,11 @@ array(
      )
 ```
 
-## Printing arrays
+### Printing arrays
 
 `print(nparray)`
 
-## Basic operations
+### Basic operations
 
 Arithmetic operators on arrays apply *elementwise*. A new array is created and filled with the result.
 
@@ -131,7 +133,7 @@ A @ B
 
 When operating with arrays of different types, the type of the resulting array corresponds to the more general or precise one (a behavior known as upcasting).
 
-## Universal functions
+### Universal functions
 
 NumPy provides familiar mathematical functions such as $\sin,\space\cos$, and $\text{exp}$. In NumPy, these are called "universal functions"(`ufunc`). Within NumPy, these functions operate elementwise on an array, producing an array as output.
 
@@ -143,7 +145,7 @@ array([0, 1, 2])
 array([1.        , 2.71828183, 7.3890561 ])
 ```
 
-## Indexing, slicing and iterating
+### Indexing, slicing and iterating
 
 - One-dimensional arrays can be indexed, sliced and iterated over, much like lists and other Python sequences.
 
@@ -203,9 +205,9 @@ array([[10, 11, 12, 13],
 
 ... (skip) (more ways to get a slice)
 
-## Shape manipulation
+### Shape manipulation
 
-### Changing the shape of an array
+#### Changing the shape of an array
 
 An array has a shape given by the number o felements along each axis:
 
@@ -264,7 +266,7 @@ print:
 0.043562757723543566
 ```
 
-## View or shallow copy
+### View or shallow copy
 
 `View()` method creates a new array object that **looks at** the same data.
 
@@ -285,7 +287,7 @@ Slicing an array returns a view of it.
 s[:] = 10 # s[:]is a view of `s`. Note the difference between `s=10` and `s[:]=10`
 ```
 
-##  Deep copy
+### Deep copy
 
 The `copy()` method makes a complete copy f the array and its data.
 
@@ -297,9 +299,9 @@ False
 
 Sometimes `copy()` should be called after slicing if the original array is not required anymore. For example, suppose `a` is a huge intermediate result and the final result `b` only contains a small fraction of `a`, a deep copy should be made when constructing `b` with slicing.
 
-## Less basic
+### Less basic
 
-### Broadcasting rules
+#### Broadcasting rules
 
 Broadcasting allows universal functions to deal in a meaningful way with inputs  that do not have exactly the same shape.
 
@@ -309,7 +311,7 @@ The second rule of broadcasting ensures that arrays with a size of 1 along a par
 
 After application of the broadcasting rules, the sizes of all arrays must match.
 
-## Advanced indexing and index tricks
+### Advanced indexing and index tricks
 
 ### Indexing with arrays of indices
 
