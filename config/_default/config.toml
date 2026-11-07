@@ -1,5 +1,5 @@
 # Change baseurl before deploy
-baseurl = "https://aminiameva.github.io"
+baseurl = "https://aminiam.com/"
 locale  = "en-us"
 title   = "Aminiam's Blog"
 
